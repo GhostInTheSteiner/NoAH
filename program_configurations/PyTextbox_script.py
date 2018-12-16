@@ -18,7 +18,7 @@ from moviepy.editor import VideoFileClip
 ####################################################
 textAreaSize = 						(2000, 230)
 multiParagraphHeight =				700
-upscaleFactor =						1
+upscaleFactor =						2
 
 customOffsetTop =					30
 customOffsetLeft =					350
@@ -273,7 +273,7 @@ def fadeOutParagraph(fadeOutOptions):
 
 
 def animateParagraphs(scriptPath):
-	sessionFolderName = "videos_version_" + str(len(os.listdir("../animated_text")) + 1)
+	sessionFolderName = "videos_version_" + str(len(os.listdir("../animated_text")))
 
 	os.system("rm /dev/shm/voice_tracks/*.wav")
 	os.system("rm /dev/shm/sequence/*.png")
