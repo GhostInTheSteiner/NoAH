@@ -341,14 +341,13 @@ def animateParagraphs(scriptPath):
 			#Zuweisen der eigentlichen Textzeile an SciptParagraphText
 			scriptParagraphText = 			scriptParagraphRecordCurrent[1]
 
-		if len(scriptParagraphRecordCurrent) > 2:
+		if len(scriptParagraphRecordCurrent) > 2 and scriptParagraphRecordCurrent[2] == 1 and len(voiceTrackList) > 0:
 			#Zuweisen des Voiced-Line-Flag Wertes an voiceTrack
-			if scriptParagraphRecordCurrent[2] == 1 and len(voiceTrackList) > 0:
-				voiceTrack = 					voiceTrackList.pop()
+			voiceTrack = 					voiceTrackList.pop()
 
-		if len(scriptParagraphRecordCurrent) > 3:
+		if len(scriptParagraphRecordCurrent) > 3 and scriptParagraphRecordCurrent[3] == 1:
 			#Zuweisen des Append-Flag-Wertes an toBeAppendedCurrent
-			toBeAppendedCurrent = 			scriptParagraphRecordCurrent[3] == 1
+			toBeAppendedCurrent =			True
 			scriptParagraphName =			""
 
 		if len(scriptParagraphRecordNext) > 3:
