@@ -87,6 +87,8 @@ def initFadeInOptions(param_margin = (0, 0), param_textBase = None, nameIndicato
 
 		maxLineWidth = textAreaSizeUpscaled[0] - offsetLeft * 4 * upscaleFactor
 
+		fontSizeFinal = int(fontSize * 1.2)
+
 	else:
 		textAreaSizeUpscaled = (textAreaSize[0] * upscaleFactor, textAreaSize[1] * upscaleFactor)
 
@@ -94,6 +96,8 @@ def initFadeInOptions(param_margin = (0, 0), param_textBase = None, nameIndicato
 		offsetLeft = customOffsetLeft
 
 		maxLineWidth = textAreaSizeUpscaled[0] - offsetLeft * 2 * upscaleFactor
+
+		fontSizeFinal = fontSize
 
 
 
@@ -111,7 +115,7 @@ def initFadeInOptions(param_margin = (0, 0), param_textBase = None, nameIndicato
 		textBase = 				textBase,
 		nameIndicatorImage =	nameIndicatorImage,
 		upscaleFactor = 		upscaleFactor,
-		font = 					ImageFont.truetype(fontPath, fontSize * upscaleFactor),
+		font = 					ImageFont.truetype(fontPath, fontSizeFinal * upscaleFactor),
 		maxLineWidth = 			maxLineWidth,
 		waitingTime = 			waitingTime,
 		speed =					fadeInSpeed,
