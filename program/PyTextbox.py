@@ -2,6 +2,7 @@
 # -*- coding: utf8 -*-
 
 import os
+import sys
 import time
 import wave
 import contextlib
@@ -17,7 +18,7 @@ from moviepy.editor import VideoFileClip
 # 				Konfiguration				       #
 ####################################################
 textAreaSize = 						(2000, 230)
-multiParagraphHeight =				700
+multiParagraphHeight =				500
 upscaleFactor =						2
 
 customOffsetTop =					30
@@ -37,8 +38,10 @@ fontPath =							"/home/gits/Dokumente/Dark Sky/PyTextbox/fonts/NotoSans.otf"
 fontSize =							30
 textColor = 						(0, 0, 0)
 
-scriptPath =						"../script_resources/Fools_2.ods"
-voiceTrackResourcesFolder =			"../voice_track_resources/Fools_2/"
+scriptPath =						"../script_resources/Fools_2_End.ods"
+voiceTrackResourcesFolder =			"../voice_track_resources/Fools_2_End/"
+
+customOutputFolder =				"/home/gits/Dokumente/Dark Sky/PyTextbox/animated_text/vv8/"
 
 indexPositions =					10
 
@@ -430,6 +433,9 @@ def animateParagraphs(scriptPath):
 
 		#...und, nachdem die Länge bekannt, ist an diese anpassen und im endgültigen Ausgabe-Ordner abspeichern
 		os.system("ffmpeg -i /dev/shm/animated_text_temp/to_be_stretched.mov " + stretchFilter + " -vcodec png ../animated_text/" + sessionFolderName + "/" + convertToLetters(currentScriptParagraphIndex) + ".mov")
+
+		if len(sys.argv) >= 2 and sys.argv[1] == "-c":
+			os.system("yes | cp ../animated_text/" + sessionFolderName + "/*.mov '" + customOutputFolder + "'")
 
 		#Jetzt noch die Ordner aufräumen...
 		os.system("rm /dev/shm/sequence/*.png")
