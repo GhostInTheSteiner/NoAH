@@ -222,6 +222,7 @@ def animateParagraphs(scriptPath):
 	os.system("rm /dev/shm/voice_tracks/*.wav")
 	os.system("rm /dev/shm/sequence/*.png")
 	os.system("rm /dev/shm/animated_text_temp/to_be_stretched.mov")
+	os.system("rm ../voice_tracks/*.wav")
 
 	os.system("mkdir /dev/shm/voice_tracks")
 	os.system("mkdir /dev/shm/sequence")
