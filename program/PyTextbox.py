@@ -12,66 +12,7 @@ from types import SimpleNamespace
 from PIL import Image, ImageDraw, ImageFont
 from moviepy.editor import VideoFileClip
 
-
-
-####################################################
-# 				Konfiguration				       #
-####################################################
-textAreaSize = 						(2000, 230)
-multiParagraphHeight =				500
-upscaleFactor =						2
-
-customOffsetTop =					30
-customOffsetLeft =					350
-
-customOffsetTopMultiParagraph =		30
-customOffsetLeftMultiParagraph =	100
-
-lineMargin =						50
-
-fadeInSpeed = 						40
-fadeOutSpeed = 						60
-framerate =							30
-waitingTime =						15
-
-fontPath =							"/home/gits/Dokumente/Dark Sky/PyTextbox/fonts/NotoSans.otf"
-fontSize =							30
-textColor = 						(0, 0, 0)
-
-scriptPath =						"../script_resources/Fools_2_End.ods"
-voiceTrackResourcesFolder =			"../voice_track_resources/Fools_2_End/"
-
-customOutputFolder =				"/home/gits/Dokumente/Dark Sky/PyTextbox/animated_text/vv8/"
-
-indexPositions =					10
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+from program.configurations.Fools_2_Flashback import *
 
 
 
@@ -435,7 +376,8 @@ def animateParagraphs(scriptPath):
 		os.system("ffmpeg -i /dev/shm/animated_text_temp/to_be_stretched.mov " + stretchFilter + " -vcodec png ../animated_text/" + sessionFolderName + "/" + convertToLetters(currentScriptParagraphIndex) + ".mov")
 
 		if len(sys.argv) >= 2 and sys.argv[1] == "-c":
-			os.system("yes | cp ../animated_text/" + sessionFolderName + "/*.mov '" + customOutputFolder + "'")
+			os.system("yes | cp ../animated_text/" + sessionFolderName + "/*.mov '" + customOutputFolderVideoClips + "'")
+			os.system("yes | cp ../voice_tracks/*.wav '" + customOutputFolderVoiceTracks + "'")
 
 		#Jetzt noch die Ordner aufräumen...
 		os.system("rm /dev/shm/sequence/*.png")
