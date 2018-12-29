@@ -12,7 +12,7 @@ from types import SimpleNamespace
 from PIL import Image, ImageDraw, ImageFont
 from moviepy.editor import VideoFileClip
 
-from program.configurations.Fools_2_Flashback import *
+from configurations.Fools_2_Flashback import *
 
 
 
