@@ -12,7 +12,7 @@ from types import SimpleNamespace
 from PIL import Image, ImageDraw, ImageFont
 from moviepy.editor import VideoFileClip
 
-from configurations.Fools_2_Flashback import *
+from configurations.Fools_2 import *
 
 
 
@@ -31,7 +31,8 @@ def initFadeInOptions(param_margin = (0, 0), param_textBase = None, nameIndicato
 
 		maxLineWidth = textAreaSizeUpscaled[0] - offsetLeft * 4 * upscaleFactor
 
-		fontSizeFinal = int(fontSize * 1.2)
+		fontSizeFinal = int(fontSize * 1.15)
+		lineMarginFinal = lineMargin * 1.1
 
 	else:
 		textAreaSizeUpscaled = (textAreaSize[0] * upscaleFactor, textAreaSize[1] * upscaleFactor)
@@ -42,7 +43,7 @@ def initFadeInOptions(param_margin = (0, 0), param_textBase = None, nameIndicato
 		maxLineWidth = textAreaSizeUpscaled[0] - offsetLeft * 2 * upscaleFactor
 
 		fontSizeFinal = fontSize
-
+		lineMarginFinal = lineMargin
 
 
 	marginTop = param_margin[1]
@@ -64,22 +65,22 @@ def initFadeInOptions(param_margin = (0, 0), param_textBase = None, nameIndicato
 		waitingTime = 			waitingTime,
 		speed =					fadeInSpeed,
 		framerate =				framerate,
-		lineMargin =			lineMargin,
+		lineMargin =			lineMarginFinal,
 
 		lineCoordinates = [
 			(offsetLeft*upscaleFactor, offsetTop*upscaleFactor + marginTop),
-			(offsetLeft*upscaleFactor, offsetTop*upscaleFactor + marginTop + lineMargin*upscaleFactor),
-			(offsetLeft*upscaleFactor, offsetTop*upscaleFactor + marginTop + lineMargin*upscaleFactor*2),
-			(offsetLeft*upscaleFactor, offsetTop*upscaleFactor + marginTop + lineMargin*upscaleFactor*3),
-			(offsetLeft*upscaleFactor, offsetTop*upscaleFactor + marginTop + lineMargin*upscaleFactor*4),
-			(offsetLeft*upscaleFactor, offsetTop*upscaleFactor + marginTop + lineMargin*upscaleFactor*5),
-			(offsetLeft*upscaleFactor, offsetTop*upscaleFactor + marginTop + lineMargin*upscaleFactor*6),
-			(offsetLeft*upscaleFactor, offsetTop*upscaleFactor + marginTop + lineMargin*upscaleFactor*7),
-			(offsetLeft*upscaleFactor, offsetTop*upscaleFactor + marginTop + lineMargin*upscaleFactor*8),
-			(offsetLeft*upscaleFactor, offsetTop*upscaleFactor + marginTop + lineMargin*upscaleFactor*9),
-			(offsetLeft*upscaleFactor, offsetTop*upscaleFactor + marginTop + lineMargin*upscaleFactor*10),
-			(offsetLeft*upscaleFactor, offsetTop*upscaleFactor + marginTop + lineMargin*upscaleFactor*11),
-			(offsetLeft*upscaleFactor, offsetTop*upscaleFactor + marginTop + lineMargin*upscaleFactor*12)
+			(offsetLeft*upscaleFactor, offsetTop*upscaleFactor + marginTop + lineMarginFinal*upscaleFactor),
+			(offsetLeft*upscaleFactor, offsetTop*upscaleFactor + marginTop + lineMarginFinal*upscaleFactor*2),
+			(offsetLeft*upscaleFactor, offsetTop*upscaleFactor + marginTop + lineMarginFinal*upscaleFactor*3),
+			(offsetLeft*upscaleFactor, offsetTop*upscaleFactor + marginTop + lineMarginFinal*upscaleFactor*4),
+			(offsetLeft*upscaleFactor, offsetTop*upscaleFactor + marginTop + lineMarginFinal*upscaleFactor*5),
+			(offsetLeft*upscaleFactor, offsetTop*upscaleFactor + marginTop + lineMarginFinal*upscaleFactor*6),
+			(offsetLeft*upscaleFactor, offsetTop*upscaleFactor + marginTop + lineMarginFinal*upscaleFactor*7),
+			(offsetLeft*upscaleFactor, offsetTop*upscaleFactor + marginTop + lineMarginFinal*upscaleFactor*8),
+			(offsetLeft*upscaleFactor, offsetTop*upscaleFactor + marginTop + lineMarginFinal*upscaleFactor*9),
+			(offsetLeft*upscaleFactor, offsetTop*upscaleFactor + marginTop + lineMarginFinal*upscaleFactor*10),
+			(offsetLeft*upscaleFactor, offsetTop*upscaleFactor + marginTop + lineMarginFinal*upscaleFactor*11),
+			(offsetLeft*upscaleFactor, offsetTop*upscaleFactor + marginTop + lineMarginFinal*upscaleFactor*12)
 		]
 	)
 

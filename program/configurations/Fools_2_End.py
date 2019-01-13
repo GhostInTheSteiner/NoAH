@@ -17,7 +17,7 @@ customOffsetLeft =					350
 customOffsetTopMultiParagraph =		30
 customOffsetLeftMultiParagraph =	100
 
-lineMargin =						50
+lineMargin =						55
 
 fadeInSpeed = 						40
 fadeOutSpeed = 						60
@@ -25,7 +25,7 @@ framerate =							30
 waitingTime =						15
 
 fontPath =							"/home/gits/Dokumente/Dark Sky/PyTextbox/fonts/NotoSans.otf"
-fontSize =							30
+fontSize =							35
 textColor = 						(0, 0, 0)
 
 scriptPath =						"../script_resources/Fools_2_End.ods"
