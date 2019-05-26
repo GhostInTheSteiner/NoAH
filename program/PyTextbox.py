@@ -12,7 +12,7 @@ from types import SimpleNamespace
 from PIL import Image, ImageDraw, ImageFont
 from moviepy.editor import VideoFileClip
 
-from configurations.Fools_2 import *
+from configurations.Fools_3 import *
 
 
 
@@ -250,7 +250,7 @@ def animateParagraphs(scriptPath):
 
 
 
-	scriptParagraphList = pyexcel_ods.get_data(scriptPath)["Paragraphs"]
+	scriptParagraphList = pyexcel_ods.get_data(scriptPath)["Paragraphs"][1:]
 	hasSelection = checkSelection(scriptParagraphList)
 
 
@@ -265,6 +265,9 @@ def animateParagraphs(scriptPath):
 
 		#Standard: Leerer Name => Keine Nameplate anzeigen!
 		scriptParagraphName =			""
+
+		#Standard: Leerer Text => Leere Textzeile anzeigen!
+		scriptParagraphText = 			""
 
 		#Standard: Keine Voiced-Line
 		voiceTrack = 					None
