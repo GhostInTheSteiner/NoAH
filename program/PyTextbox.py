@@ -385,7 +385,7 @@ def animateParagraphs(scriptPath):
 			os.system("yes | cp ../animated_text/" + sessionFolderName + "/*.mov '" + customOutputFolderVideoClips + "'")
 			os.system("yes | cp ../voice_tracks/*.wav '" + customOutputFolderVoiceTracks + "'")
 
-			if sys.argv[2] == "-r":
+			if len(sys.argv) >= 3 and sys.argv[2] == "-r":
 				os.system("ffmpeg -y -i ../animated_text/" + sessionFolderName + "/" + convertToLetters(currentScriptParagraphIndex) + ".mov '" + customOutputFolderVideoClips + "/renpy/" + str(currentScriptParagraphIndex) + ".avi' -filter_complex 'color=black,format=rgb24[c];[c][0]scale2ref[c][i];[c][i]overlay=format=auto:shortest=1,setsar=1'")
 
 		#Jetzt noch die Ordner aufräumen...
