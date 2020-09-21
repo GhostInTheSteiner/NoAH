@@ -12,7 +12,7 @@ from types import SimpleNamespace
 from PIL import Image, ImageDraw, ImageFont
 from moviepy.editor import VideoFileClip
 
-from configurations.Fools_3 import *
+from configurations.Delusion2 import *
 
 
 
@@ -230,6 +230,7 @@ def animateParagraphs(scriptPath):
 	os.system("mkdir /dev/shm/animated_text_temp")
 	os.system("mkdir ../animated_text")
 	os.system("mkdir ../animated_text/" + sessionFolderName)
+	os.system("mkdir '" + customOutputFolderVideoClips + "/renpy'")
 	
 	os.system("shnsplit -f " + voiceTrackResourcesFolder + "*.cue " + voiceTrackResourcesFolder + "*.wav -d /dev/shm/voice_tracks")
 	os.system("cp /dev/shm/voice_tracks/*.wav ../voice_tracks")
@@ -383,6 +384,9 @@ def animateParagraphs(scriptPath):
 		if len(sys.argv) >= 2 and sys.argv[1] == "-c":
 			os.system("yes | cp ../animated_text/" + sessionFolderName + "/*.mov '" + customOutputFolderVideoClips + "'")
 			os.system("yes | cp ../voice_tracks/*.wav '" + customOutputFolderVoiceTracks + "'")
+
+			if sys.argv[2] == "-r":
+				os.system("ffmpeg -y -i ../animated_text/" + sessionFolderName + "/" + convertToLetters(currentScriptParagraphIndex) + ".mov '" + customOutputFolderVideoClips + "/renpy/" + str(currentScriptParagraphIndex) + ".avi' -filter_complex 'color=black,format=rgb24[c];[c][0]scale2ref[c][i];[c][i]overlay=format=auto:shortest=1,setsar=1'")
 
 		#Jetzt noch die Ordner aufräumen...
 		os.system("rm /dev/shm/sequence/*.png")
