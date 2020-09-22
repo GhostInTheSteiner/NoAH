@@ -1,0 +1,13 @@
+<kdenlive-scene offset="11365" masterTrack="8" documentid="1599907246678">
+ <clip audioStream="-1" id="223" state="1" position="11365" speed="1.000000" binid="96" track="8" in="0" out="161">
+  <effects parentIn="0">
+   <effect id="qtblend">
+    <property name="rotate_center">1</property>
+    <property name="compositing">0</property>
+    <property name="distort">0</property>
+    <property name="rect">0=0 0 1280 720 1</property>
+    <property name="rotation">0=0</property>
+   </effect>
+  </effects>
+ </clip>
+</kdenlive-scene>
