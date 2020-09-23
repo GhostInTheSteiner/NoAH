@@ -77,7 +77,9 @@ BinScrollUp() {
 
 ; Script
 
-#IfWinActive ahk_exe kdenlive.exe
+SetTitleMatchMode 2
+
+#IfWinActive fps - Kdenlive
 
 $3::
 if (binFocused)
@@ -174,6 +176,12 @@ Clipboard := content
 Send ^!v
 return
 
+a::
+FileRead, content, WIPE.txt
+Clipboard := content
+Send ^v
+return
+
 ~Esc::
 if (binFocused)
 {
@@ -196,7 +204,7 @@ if (timelineFocused)
 
   GetKeyState, state, Shift
   
-  MouseMove 0, -hTrack / 2, 0, R
+  MouseMove 0, -hTrack, 0, R
 
   MouseGetPos x_, y_
   yCurrentTrack := y_
@@ -211,7 +219,7 @@ if (timelineFocused)
 
   GetKeyState, state, Shift
 
-  MouseMove 0, hTrack / 2, 0, R
+  MouseMove 0, hTrack, 0, R
 
   MouseGetPos x_, y_
   yCurrentTrack := y_
