@@ -30,14 +30,14 @@ timelineFocused := True
 ; Functions
 
 CursorToTimeline() {
-  global xTimelineTopArea
-  global yTimelineTopArea
-  global wTimelineTopArea
-  global hTimelineTopArea
-  global yCurrentTrack
+;   global xTimelineTopArea
+;   global yTimelineTopArea
+;   global wTimelineTopArea
+;   global hTimelineTopArea
+;   global yCurrentTrack
 
-  PixelSearch, x, y, xTimelineTopArea, yTimelineTopArea, xTimelineTopArea + wTimelineTopArea, yTimelineTopArea + hTimelineTopArea, 0xEFF0F1, 2, Fast
-  MouseMove x + 3, yCurrentTrack, 0
+;   PixelSearch, x, y, xTimelineTopArea, yTimelineTopArea, xTimelineTopArea + wTimelineTopArea, yTimelineTopArea + hTimelineTopArea, 0xEFF0F1, 2, Fast
+;   MouseMove x + 3, yCurrentTrack, 0
 }
 
 BinScrollDown() {
@@ -176,8 +176,14 @@ Clipboard := content
 Send ^!v
 return
 
-a::
-FileRead, content, WIPE.txt
+F1::
+FileRead, content, WIPE_IN.txt
+Clipboard := content
+Send ^v
+return
+
+F4::
+FileRead, content, WIPE_OUT.txt
 Clipboard := content
 Send ^v
 return
@@ -194,36 +200,6 @@ else
 {
   binFocused := False
   timelineFocused := False
-}
-return
-
-F1::
-if (timelineFocused)
-{
-  SendInput, {Up}
-
-  GetKeyState, state, Shift
-  
-  MouseMove 0, -hTrack, 0, R
-
-  MouseGetPos x_, y_
-  yCurrentTrack := y_
-  Click
-}
-return
-
-F4::
-if (timelineFocused)
-{
-  SendInput, {Down}
-
-  GetKeyState, state, Shift
-
-  MouseMove 0, hTrack, 0, R
-
-  MouseGetPos x_, y_
-  yCurrentTrack := y_
-  Click
 }
 return
 
