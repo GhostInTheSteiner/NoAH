@@ -4,7 +4,7 @@ NoAH is a toolset around a script called "PyTextbox" which serves to animate tex
 
 fun^10 x int^40 = Ir2 contains an Autohotkey-Script to ease up editing in Kdenlive. It adds a few convenient shortcuts to e.g. easily fade-in or fade-out images.
 
-For an example of what content it allows to generate see this playlist:
+For an example of what content NoAH allows to generate see this playlist:
 
 https://youtube.com/playlist?list=PLy_Bwyf7LCb5c73MCP0JRgVd2uovEYRoN
 
