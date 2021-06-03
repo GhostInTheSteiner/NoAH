@@ -2,6 +2,7 @@
 # -*- coding: utf8 -*-
 
 import os
+import re
 import sys
 import time
 import wave
@@ -479,13 +480,19 @@ def getVoiceTracks():
 	voiceTrackList = []
 	voiceTracksPath = "/dev/shm/voice_tracks"
 
-	for fileName in os.listdir(voiceTracksPath):
+	for fileName in list(reversed(sorted_alphanumeric(os.listdir(voiceTracksPath)))): #ORDER IS BROKEN!!!!!!
 		if os.path.isfile(os.path.join(voiceTracksPath, fileName)) and fileName.endswith(".wav"):
 			voiceTrackPath = os.path.join(voiceTracksPath, fileName)
-
 			voiceTrackList.append(SimpleNamespace(path = voiceTrackPath, length = getWaveAudioLength(voiceTrackPath)))
 
 	return voiceTrackList
+
+
+
+def sorted_alphanumeric(data):
+    convert = lambda text: int(text) if text.isdigit() else text.lower()
+    alphanum_key = lambda key: [ convert(c) for c in re.split('([0-9]+)', key) ] 
+    return sorted(data, key=alphanum_key)
 
 
 
