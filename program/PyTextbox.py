@@ -12,7 +12,7 @@ from types import SimpleNamespace
 from PIL import Image, ImageDraw, ImageFont
 from moviepy.editor import VideoFileClip
 
-from configurations.Delusion2 import *
+from configurations.Remember11 import *
 
 
 
@@ -230,7 +230,8 @@ def animateParagraphs(scriptPath):
 	os.system("mkdir /dev/shm/animated_text_temp")
 	os.system("mkdir ../animated_text")
 	os.system("mkdir ../animated_text/" + sessionFolderName)
-	os.system("mkdir '" + customOutputFolderVideoClips + "/renpy'")
+	os.system("mkdir ../voice_tracks")
+	# os.system("mkdir '" + customOutputFolderVideoClips + "/renpy'")
 	
 	os.system("shnsplit -f " + voiceTrackResourcesFolder + "*.cue " + voiceTrackResourcesFolder + "*.wav -d /dev/shm/voice_tracks")
 	os.system("cp /dev/shm/voice_tracks/*.wav ../voice_tracks")

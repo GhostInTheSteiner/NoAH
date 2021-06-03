@@ -29,9 +29,9 @@ fontSize =							60
 textColor = 						(0, 0, 0)
 
 scriptPath =						"../script_resources/Remember11.ods"
-voiceTrackResourcesFolder =			"../voice_track_resources/Fools_3/"
+voiceTrackResourcesFolder =			"../voice_track_resources/Remember11/"
 
 customOutputFolderVideoClips = 		"../animated_text/videos_version_0"
-customOutputFolderVoiceTracks = 	"/home/gits/Dokumente/Dark Sky/Kdenlive/Text/voice_tracks/"
+customOutputFolderVoiceTracks = 	"../animated_text/videos_version_0/voice"
 
 indexPositions =					10
