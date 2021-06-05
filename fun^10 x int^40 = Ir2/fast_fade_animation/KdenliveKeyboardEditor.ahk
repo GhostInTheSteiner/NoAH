@@ -233,7 +233,11 @@ F3::
 SendInput {Left}
 SendInput {Home}
 SendInput 1
-SendInput {Left}
+
+Loop 7
+{
+	SendInput {Left}
+}
 
 SendInput r
 
